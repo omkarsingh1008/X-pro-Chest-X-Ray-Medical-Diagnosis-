@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet"  href='{{ url_for("static",filename="css/bootstrap.css") }}'> 
+    <link rel='stylesheet' type='text/css' href='{{ url_for("static",filename="css/main.css") }}'>
+    
+    {% block head %}
+    {% endblock %}
+
+</head>
+
+
+
+<body>
+
+    <div id='header'>
+    
+        <div>
+            <p style="color:white;"> <span>Hello Welcome to X-PRO</span>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span><a href='/'>HOME</a></span>
+                {% if email %} 
+                <span><a href="/logout/">Logout</a></span>
+                {% endif %}
+
+            </p>
+        </div>
+                {% block header %}
+        {% endblock %}
+
+    </div>
+
+
+    <div id='left'>
+           <hr>
+    {% block left %}
+    {% endblock %}
+        </div>
+    
+    
+<div id='main'>
+   <hr>
+   {% block main %}
+
+   {% endblock %}
+</div>
+
+    
+    <div id='right'> 
+            <hr>
+
+
+            {% block right %}
+            {% endblock %}
+        </div>
+    
+    <div id='footer'>
+        {% block footer %}
+        {% endblock %}
+       <p style="color:rgb(240, 220, 220);">&copy; all rights reveserved at X-PRO</p>
+
+    </div>
+    
+
+</body>
+
+</html>

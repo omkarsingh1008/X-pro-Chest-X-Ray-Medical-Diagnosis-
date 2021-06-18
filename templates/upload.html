@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block main %}
+<p style="color: white;">{{result | safe}}</p>
+{% endblock %}
+{% block right %}
+<img src="{{url_for('static',filename='om.jpg')}}" alt="Trulli" width="300" height="300" >
+{% endblock %}
